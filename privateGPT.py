@@ -39,8 +39,8 @@ from torch import cuda, bfloat16
 import transformers
 
 def run_model(query):
-    #   'meta-llama/Llama-2-70b-chat-hf'
-    model_id = 'bigscience/bloom-560m'
+    model_id ='meta-llama/Llama-2-70b-chat-hf'
+    # model_id = 'bigscience/bloom-560m'
     device = f'cuda:{cuda.current_device()}' if cuda.is_available() else 'cpu'
 
     # Set quantization configuration to load large model with less GPU memory  - Cannot use quantization in Windows
