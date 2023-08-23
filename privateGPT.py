@@ -39,7 +39,9 @@ from torch import cuda, bfloat16
 import transformers
 
 def run_model(query):
-    model_id ='meta-llama/Llama-2-70b-chat-hf'
+    # 
+    # meta-llama/Llama-2-70b-chat-hf
+    model_id ='garage-bAInd/Platypus2-70B-instruct'
     # model_id = 'bigscience/bloom-560m'
     device = f'cuda:{cuda.current_device()}' if cuda.is_available() else 'cpu'
 
@@ -53,13 +55,12 @@ def run_model(query):
 
     # Initialize model configuration and model
     hf_token = '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'
-    model_config = transformers.AutoConfig.from_pretrained(model_id, use_auth_token=True)
+    model_config = transformers.AutoConfig.from_pretrained(model_id, use_auth_token=hf_token)
     model = transformers.AutoModelForCausalLM.from_pretrained(
         model_id,
         trust_remote_code=True,
         config=model_config,
         # quantization_config=bnb_config,
-        use_auth_token=hf_token,
         device_map='auto'
     )
     model.eval()
