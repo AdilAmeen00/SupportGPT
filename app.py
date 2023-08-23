@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify, Response
-import privateGPT
+import SupportGPT
 import traceback
 import json
 
@@ -14,7 +14,7 @@ def chat():
     print("chat route called")
     try:
         message = request.form['message']
-        response = privateGPT.run_model(message)
+        response = SupportGPT.run_model(message)
         print("this is flask print",response)
         print("result",response['result'])
         return jsonify({'response': response['result']})
