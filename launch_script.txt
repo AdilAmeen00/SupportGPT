@@ -1,0 +1,23 @@
+
+sudo apt-get update
+sudo apt-get install python3-venv -y
+sudo apt-get install python3-pip -y
+sudo apt-get install git-all -y
+git clone https://github.com/AdilAmeen00/SupportGPT.git
+pip install -r requirements.txt
+pip install flask --ignore-installed blinker==1.4
+pip install dotenv
+pip install urllib3
+pip install chardet
+pip install --upgrade langchain
+pip install xformers
+pip install chromadb
+sudo apt-get install sqlite3
+sudo apt-get update
+pip install pysqlite3-binary
+pip install chromadb==0.3.29
+pip install transformers
+pip install accelerate
+pip install scipy
+pip install sentence_transformers
+python3 app.py
