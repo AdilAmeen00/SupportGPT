@@ -41,7 +41,7 @@ import transformers
 def run_model(query):
     # lmsys/vicuna-13b-delta-v1.1  , bigscience/bloom-560m ,garage-bAInd/Platypus2-70B-instruct
     # meta-llama/Llama-2-70b-chat-hf
-    model_id ='lmsys/vicuna-13b-delta-v1.1'
+    model_id ='bigscience/bloom-560m'
     # model_id = ''
     device = f'cuda:{cuda.current_device()}' if cuda.is_available() else 'cpu'
 
