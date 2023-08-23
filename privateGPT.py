@@ -53,7 +53,7 @@ def run_model(query):
 
     # Initialize model configuration and model
     hf_token = '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'
-    model_config = transformers.AutoConfig.from_pretrained(model_id, use_auth_token=hf_token)
+    model_config = transformers.AutoConfig.from_pretrained(model_id, use_auth_token=True, use_auth_token=hf_token)
     model = transformers.AutoModelForCausalLM.from_pretrained(
         model_id,
         trust_remote_code=True,
